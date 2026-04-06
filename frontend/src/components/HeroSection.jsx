@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 import { useTypewriter } from '../hooks';
 
 const ROLES = [

@@ -12,7 +12,7 @@ export default function ExperienceSection() {
             Experience
           </h2>
 
-          {EXPERIENCES.map((exp, i) => (
+          {EXPERIENCES.map((exp) => (
             <div key={exp.id} className="reveal" style={{ display: 'flex', gap: '2rem', marginBottom: '2rem' }}>
               {/* Timeline line */}
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '0.25rem' }}>
