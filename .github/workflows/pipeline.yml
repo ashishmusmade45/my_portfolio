@@ -1,4 +1,4 @@
-name: Frontend Static CI
+name: Frontend CI (Vite React)
 
 on:
   push:
@@ -7,18 +7,36 @@ on:
     branches: ["main"]
 
 jobs:
-  check-files:
+  build:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: frontend
+
+    strategy:
+      matrix:
+        node-version: [18.x]
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Verify project files exist
-        run: |
-          test -f frontend/index.html
-          test -f frontend/style.css
-          test -f frontend/style.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Build project
+        run: npm run build
 
       - name: CI Passed
-        run: echo "Static frontend project checked successfully"
+        run: echo "Frontend build and checks completed successfully"
