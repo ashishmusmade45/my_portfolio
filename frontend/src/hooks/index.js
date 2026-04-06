@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 /* ── Typewriter hook ─────────────────────────────────────── */
 export function useTypewriter(words, speed = 90, pause = 2000) {

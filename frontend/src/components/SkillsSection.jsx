@@ -126,7 +126,7 @@ export default function SkillsSection() {
             <button key={cat} onClick={() => setActiveCategory(cat)} style={{
               fontFamily: 'var(--font-mono)', fontSize: '0.68rem',
               padding: '0.35rem 1.1rem', borderRadius: '8px',
-              cursor: 'pointer', border: '1px solid transparent',
+              cursor: 'pointer',
               background: activeCategory === cat ? 'var(--blue-500)' : 'rgba(255,255,255,0.03)',
               color: activeCategory === cat ? '#fff' : 'var(--text-muted)',
               fontWeight: activeCategory === cat ? 600 : 400,
