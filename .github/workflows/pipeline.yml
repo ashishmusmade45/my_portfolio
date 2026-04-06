@@ -16,9 +16,9 @@ jobs:
 
       - name: Verify project files exist
         run: |
-          test -f index.html
-          test -f style.css
-          test -f script.js
+          test -f frontend/index.html
+          test -f frontend/style.css
+          test -f frontend/style.js
 
       - name: CI Passed
         run: echo "Static frontend project checked successfully"
